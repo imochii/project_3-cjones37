@@ -18,6 +18,7 @@ using namespace std;
 int main()
 {
     int depth = 0;
+    assert (depth == 0);
 
     BinarySearchTree<int> ofIntBST1;    // create int BST
     AVLTree<int> ofIntAVL1;  // create int AVL
@@ -30,6 +31,10 @@ int main()
         ofIntAVL1.add(i);    // add numbers 1-100 into AVL
         ofIntSplay1.add(i);  // add numbers 1-100 into Splay
     }
+
+    assert (ofIntBST1.isEmpty() != true);       // testing
+    assert (ofIntAVL1.isEmpty() != true);       // testing
+    assert (ofIntSplay1.isEmpty() != true);     // testing
 
         // creating and opening a file
     ofstream outFile1;
@@ -52,16 +57,23 @@ int main()
         outFile1 << setw(10) << depth << endl;
     }
 
+    assert (ofIntBST1.find(10, depth) == true);     // testing
+    assert (ofIntAVL1.find(10, depth) == true);     // testing
+    assert (ofIntSplay1.find(10, depth) == true);       // testing
+
         // check for understanding
     cout << "Check for understanding:" << endl;
     ofIntBST1.find(0, depth);
     cout << "The values and depth returned from a BST search for value 0: " << depth << endl;
+    assert (ofIntBST1.find(0, depth) == true);     // testing
 
     ofIntBST1.find(101, depth);
     cout << "The values and depth returned from a BST search for value 101: " << depth << endl;
+    assert (ofIntAVL1.find(0, depth) == true);     // testing
 
     ofIntBST1.find(102, depth);
     cout << "The depth returned from a BST search for value 102: " << depth << endl;
+    assert (ofIntSplay1.find(0, depth) == true);     // testing
 
         // close the file
     outFile1.close();
@@ -72,14 +84,22 @@ int main()
     AVLTree<int> ofIntAVL2;  // create int AVL
     SplayTree<int> ofIntSplay2;  // create int splay
 
+    assert (ofIntBST2.isEmpty() == true);       // testing
+    assert (ofIntAVL2.isEmpty() == true);       // testing
+    assert (ofIntSplay2.isEmpty() == true);     // testing
+
     vector<int> vec;    // create a vector
     for (int i = 1; i <= 100; i++)   // fill vector
     {
         vec.push_back(i);
     }
 
+    assert (vec.size() == 100);     // testing
+
         // shuffle shuffle shuffle
     shuffle(vec.begin(), vec.end(), random_device());
+
+    // COMPARE PRE=SHUFFLE AND POST-SHUFFLE!!!!!!!!!!!!!!!!
 
         // loop 100x
     for (int i = 0; i <= 100; i++)
@@ -112,12 +132,17 @@ int main()
         outFile2 << setw(10) << depth << endl;    // find in Splay1 and write to file
     }
 
+    assert (ofIntBST2.find(10, depth) == true);     // testing
+    assert (ofIntAVL2.find(10, depth) == true);     // testing
+    assert (ofIntSplay2.find(10, depth) == true);       // testing
+
         // close the file
     outFile2.close();
 
     // --------------------------------------------------------
 
     vector<Active> artist;
+
     string file = "../Active-in-Kpop.csv";
 
     if (fileCheck(file, artist))
@@ -156,6 +181,10 @@ int main()
             outFileCustom1 << setw(10) << depth << endl;    // find in Splay1 and write to file
         }
 
+        assert (activeBST.find(artist.at(10), depth) == true);     // testing
+        assert (activeAVL.find(artist.at(10), depth) == true);     // testing
+        assert (activeSplay1.find(artist.at(10), depth) == true);     // testing
+
             // close the file
         outFileCustom1.close();
 
@@ -185,6 +214,8 @@ int main()
             activeSplay2.find(artist.at(i), depth);
             outFileCustom2 << setw(10) << depth << endl;
         }
+
+        assert (activeSplay2.find(artist.at(10), depth) == true);     // testing
 
             // close the file
         outFileCustom2.close();
