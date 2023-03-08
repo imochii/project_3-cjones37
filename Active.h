@@ -180,8 +180,6 @@ public:
         return lhs.getRow() != rhs.getRow();
     }
 
-
-
 /**
 * Overload stream insertion operator for pretty printing
 */
