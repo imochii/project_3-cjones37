@@ -152,6 +152,8 @@ int main()
         SplayTree<Active> activeSplay1;  // create first custom splay
         SplayTree<Active> activeSplay2;  // create second custom splay
 
+        assert (artist.size() > 1000);      // testing
+
             // insert in the order of the vector
         for (int i = 0; i < artist.size(); i++)
         {
