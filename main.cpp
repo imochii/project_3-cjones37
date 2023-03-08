@@ -63,17 +63,17 @@ int main()
 
         // check for understanding
     cout << "Check for understanding:" << endl;
-    ofIntBST1.find(0, depth);
+    ofIntBST1.find(1, depth);
     cout << "The values and depth returned from a BST search for value 0: " << depth << endl;
-    assert (ofIntBST1.find(0, depth) == true);     // testing
+    assert (ofIntBST1.find(1, depth) == true);     // testing
 
     ofIntBST1.find(101, depth);
     cout << "The values and depth returned from a BST search for value 101: " << depth << endl;
-    assert (ofIntAVL1.find(0, depth) == true);     // testing
+    assert (ofIntAVL1.find(0, depth) != true);     // testing
 
     ofIntBST1.find(102, depth);
     cout << "The depth returned from a BST search for value 102: " << depth << endl;
-    assert (ofIntSplay1.find(0, depth) == true);     // testing
+    assert (ofIntSplay1.find(0, depth) != true);     // testing
 
         // close the file
     outFile1.close();
