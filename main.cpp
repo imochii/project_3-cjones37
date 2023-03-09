@@ -22,7 +22,7 @@ int main()
 
     BinarySearchTree<int> ofIntBST1;    // create int BST
     AVLTree<int> ofIntAVL1;  // create int AVL
-    SplayTree<int> ofIntSplay1;  // create int splay
+    SplayTree<int> ofIntSplay1(false);  // create int splay
 
         // loop 100x in order
     for (int i = 1; i <= 100; i++)
@@ -82,7 +82,7 @@ int main()
 
     BinarySearchTree<int> ofIntBST2;    // create int BST
     AVLTree<int> ofIntAVL2;  // create int AVL
-    SplayTree<int> ofIntSplay2;  // create int splay
+    SplayTree<int> ofIntSplay2(false);  // create int splay
 
     assert (ofIntBST2.isEmpty() == true);       // testing
     assert (ofIntAVL2.isEmpty() == true);       // testing
@@ -150,8 +150,8 @@ int main()
     {
         BinarySearchTree<Active> activeBST;    // create custom BST
         AVLTree<Active> activeAVL;  // create custom AVL
-        SplayTree<Active> activeSplay1;  // create first custom splay
-        SplayTree<Active> activeSplay2;  // create second custom splay
+        SplayTree<Active> activeSplay1(false);  // create first custom splay
+        SplayTree<Active> activeSplay2(false);  // create second custom splay
 
         assert (artist.size() > 1000);      // testing
 

@@ -33,6 +33,7 @@ float calcAverageDepth(bool splayOnAdd) {
         std::string valString;
         int value;
         char comma = ',';
+        int depth = 0;      // instantiate depth value
         std::getline(fin, action, comma);
         std::getline(fin, valString);
         value = std::stoi(valString);
@@ -42,10 +43,18 @@ float calcAverageDepth(bool splayOnAdd) {
         // correctly the depth of the tree on find operations and
         // to calculate the sum of depths in the variable `sumOfDepths`
 
-
-
+        if (action == "add")
+        {
+            splayTree.add(value);
+        }
+        else if (action == "find")
+        {
+            splayTree.find(value, depth);
+            sumOfDepths+=depth;     // update sumOfDepths
+        }
 
         // End add code here
+
         operations++;
     }
     float averageDepth = (float)sumOfDepths / (float)operations;
