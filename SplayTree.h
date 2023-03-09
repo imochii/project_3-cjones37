@@ -17,6 +17,7 @@ private:
         SplayNode(Comparable c, SplayNode* l, SplayNode* r, SplayNode* p = nullptr) : value(c), leftChild(l), rightChild(r), parent(p) {}
     };
     SplayNode* root;
+    bool splayOnAdd;
 
     // Helper recursive function to destroy the tree.
     void destroy(SplayNode* &n) {
@@ -152,7 +153,10 @@ private:
         if (n == nullptr) {
             // We found the place where we can add the node.
             n = new SplayNode(c, nullptr, nullptr, p);
-            splay(n);
+            if (splayOnAdd)
+            {
+                splay(n);
+            }
         }
         else if (c < n->value) {
             // Value is less than current node. Go to left child.
@@ -206,8 +210,9 @@ private:
 
 public:
     // Default Constructor
-    SplayTree() {
+    SplayTree(bool splayOnAdd) {
         root = nullptr;
+        this->splayOnAdd = splayOnAdd;
     }
 
     // Copy Constructor

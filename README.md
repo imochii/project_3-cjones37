@@ -20,6 +20,7 @@
 # -------------
 
 * Graph the Binary Search Tree, AVL Tree, and Splay Tree depths: ![outFile1-graph](outFile1-graph.png)
+# I showed this to Professor Cafiero & he said it was fine/made sense with the way I decided to put all three in one graph. 
 # ------------- 
 
 * Compare and contrast the graphs and explain the differences based on what you know about the structure and behavior of the trees. Justify the time complexity of searching the trees based on the results.
