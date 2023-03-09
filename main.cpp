@@ -99,7 +99,8 @@ int main()
         // shuffle shuffle shuffle
     shuffle(vec.begin(), vec.end(), random_device());
 
-    // COMPARE PRE=SHUFFLE AND POST-SHUFFLE!!!!!!!!!!!!!!!!
+        // COMPARE PRE-SHUFFLE AND POST-SHUFFLE!!!!!!!!!!!!!!!!
+    assert (vec[10] != 10);     // testing
 
         // loop 100x
     for (int i = 0; i <= 100; i++)
